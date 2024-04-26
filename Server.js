@@ -169,7 +169,7 @@ app.get('/verify', async (req, res) => {
     const email = req.query.email;
     if (tokenStore[email] && tokenStore[email] === token) {
         await User.findOneAndUpdate({ email: email }, { verified: true });
-        res.redirect('http://localhost:3000/login');
+        res.redirect('https://662a9de6c1093d230e4de4ed--stalwart-pixie-8d32b7.netlify.app/login');
     } else {
         res.send({ message: 'Invalid or expired verification token' });
     }
